@@ -112,7 +112,7 @@ LANGUAGE js AS """
 """;
 
 ```
-##Queries
+## Queries
 
 ###Extract Menus
 
@@ -236,6 +236,6 @@ JOIN
 ON
   ue.vb_name = gh.vb_name AND ue.b_name = gh.b_name;
 ```
-##Results
+## Results
 
 The final query compares business hours between Uber Eats and Grubhub for virtual kitchens and classifies them as either "In Range," "Out of Range with 5 mins difference," or "Out of Range."
