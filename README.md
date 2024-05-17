@@ -142,7 +142,7 @@ first_menu_key AS (
     extracted_menus
 ),
 ```
-###Extract Menu Data
+### Extract Menu Data
 
 Extracts the menu data using the first menu key .
 
