@@ -39,7 +39,7 @@ LANGUAGE js AS """
   return Object.keys(JSON.parse(input));
 """;
 ```
-###extractJsonValue
+### extractJsonValue
 
 Extracts a value from a JSON object using a key.
 
@@ -56,7 +56,7 @@ LANGUAGE js AS """
 """;
 ```
 
-###parseRegularHours
+### parseRegularHours
 
 Parses regular hours from Uber Eats data.
 
@@ -82,7 +82,7 @@ LANGUAGE js AS """
 """;
 ```
 
-###parseGrubhubBusinessHours
+### parseGrubhubBusinessHours
 
 Parses business hours from Grubhub data.
 
@@ -114,7 +114,7 @@ LANGUAGE js AS """
 ```
 ## Queries
 
-###Extract Menus
+### Extract Menus
 
 Extracts menus JSON from Uber Eats responses.
 ```
@@ -129,7 +129,7 @@ WITH extracted_menus AS (
     JSON_EXTRACT(response, '$.data.menus') IS NOT NULL
 ),
 ```
-###Get First Menu Key
+### Get First Menu Key
 
 Gets the first menu key from the JSON .
 ```
@@ -161,8 +161,8 @@ menu_data AS (
     TO_JSON_STRING(em.menus_json) = TO_JSON_STRING(fk.menus_json)
 ),
 ```
-Extract Regular 
-HoursExtracts regular hours from the menu data.
+### Extract Regular Hours
+Extracts regular hours from the menu data.
 
 ```
 regular_hours AS (
@@ -177,7 +177,7 @@ regular_hours AS (
 ),
 ```
 
-###Uber Eats Hours
+### Uber Eats Hours
 
 Unnests and parses the regular hours for Uber Eats.
 ```
@@ -193,7 +193,7 @@ uber_eats_hours AS (
     `arboreal-vision-339901.take_home_v2.virtual_kitchen_ubereats_hours` as ue
 ),
 ```
-###Grubhub Hours
+### Grubhub Hours
 Extracts and parses the business hours for Grubhub.
 ```
 grubhub_hours AS (
@@ -209,7 +209,7 @@ grubhub_hours AS (
     UNNEST(parseGrubhubBusinessHours(TO_JSON_STRING(JSON_EXTRACT(response, '$.availability_by_catalog.STANDARD_DELIVERY.schedule_rules')))) AS business_hours
 )
 ```
-###Join and Compare Hours
+### Join and Compare Hours
 Joins Uber Eats and Grubhub hours and determines if they are in range or out of range.
 ```
 SELECT
