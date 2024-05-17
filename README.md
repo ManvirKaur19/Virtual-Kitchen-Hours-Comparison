@@ -3,8 +3,8 @@
 This project compares business hours between Uber Eats and Grubhub for virtual kitchens. The goal is to determine if the business hours on both platforms are in range, out of range, or out of range with a 5-minute difference.
 
 ## Table of Contents
-- [Platform and Database](#Platform and Database)
-- [Project Structure](#Project Structure)
+- [Platform and Database](#Platform-and-Database)
+- [Project Structure](#Project-Structure)
 - [Functions](#Functions)
 - [Queries](#Queries)
 - [Results](#Results)
