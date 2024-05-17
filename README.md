@@ -9,7 +9,7 @@ This project compares business hours between Uber Eats and Grubhub for virtual k
 - [Queries](#Queries)
 - [Results](#Results)
 
-##Platform and Database
+## Platform and Database
 
 This project uses Google BigQuery for data processing and analysis. The specific dataset used for this project is:
 
